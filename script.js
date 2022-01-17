@@ -34,7 +34,7 @@ function onDragEnd(event) {
   offsetY += event.clientY - originY;
 }
 
-const dragon = document.querySelector('img');
+const dragon = document.getElementById('drag');
 dragon.addEventListener('pointerdown', onDragStart);
 dragon.addEventListener('pointermove', onDragMove);
 dragon.addEventListener('pointerup', onDragEnd);
@@ -46,7 +46,7 @@ dragon.addEventListener('pointerup', onDragEnd);
 document.addEventListener('keyup', onDragMoveKeyboard);
 function onDragMoveKeyboard (event){
   const offset = 50;
-  const dragon = document.querySelector('img');
+  const dragon = document.getElementById('drag');
   switch(event.code){
     case 'ArrowUp':
       offsetY -= offset;

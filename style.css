@@ -1,7 +1,15 @@
-img {
+#drag {
     height: 200px;
+    display: block;
   }
   
   body {
     touch-action: none;
   }
+
+  .badges { 
+    height: auto;
+    padding: 0;
+    margin-top: 5px;
+    width: auto;
+}
