@@ -39,28 +39,31 @@ dragon.addEventListener('pointerdown', onDragStart);
 dragon.addEventListener('pointermove', onDragMove);
 dragon.addEventListener('pointerup', onDragEnd);
 
-translateX = 50;
-translateY = 50;
-let resultadoX = 152;
-let resultadoY = 0;
+// translateX = 50;
+// translateY = 50;
+// let resultadoX = 152;
+// let resultadoY = 0;
 document.addEventListener('keyup', onDragMoveKeyboard);
 function onDragMoveKeyboard (event){
-  switch(event.key){
+  const offset = 50;
+  const dragon = document.querySelector('img');
+  switch(event.code){
     case 'ArrowUp':
-      dragon.style.transform = 'translateY(' + (-translateY) + 'px)';
-      translateY += 50;
+      offsetY -= offset;
+      dragon.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
       break;
     case 'ArrowRight':
-      dragon.style.transform = 'translateX(' + translateX + 'px)';
-      translateX += 50;
+      offsetX += offset;
+      dragon.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
       break;
     case 'ArrowDown':
-      dragon.style.transform = 'translateY(' + translateY + 'px)';
-      translateY += 50;
+      offsetY += offset;
+      dragon.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
       break;
     case 'ArrowLeft':
-      dragon.style.transform = 'translateX(' + (-translateX) + 'px)';
-      translateX += 50;
+      // Diminuir 50 da variavel global offsetX
+      offsetX -= offset;
+      dragon.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
       break;
   }
 }
